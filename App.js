@@ -19,7 +19,11 @@ export default function App() {
         <Stack.Screen
           name="home"
           component={Home}
-          options={{ title: "DALI Connect" }}
+          options={{
+            title: "DALI Connect",
+            headerTitleStyle: { fontWeight: "900" },
+            headerBackVisible: false,
+          }}
         />
       </Stack.Navigator>
 

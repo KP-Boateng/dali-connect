@@ -7,6 +7,7 @@ import { customFontStyles } from "../assets/fonts/fonts";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import SearchListTile from "../components/searchListTile";
+import Footer from "../components/Footer";
 
 SplashScreen.preventAutoHideAsync();
 const Home = () => {
@@ -73,6 +74,7 @@ const Home = () => {
           </Text>
         </View>
       )}
+      <Footer />
     </View>
   );
 };

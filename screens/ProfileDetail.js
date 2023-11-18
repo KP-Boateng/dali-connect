@@ -1,21 +1,24 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, Pressable } from "react-native";
 import tw from "twrnc";
 import { Image } from "expo-image";
 import { useCallback } from "react";
 import { customFontStyles } from "../assets/fonts/fonts";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import { Entypo } from "@expo/vector-icons";
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 SplashScreen.preventAutoHideAsync();
-const ProfileDetail = ({ route }) => {
+const ProfileDetail = ({ route, navigation }) => {
   const { details } = route.params;
+
   const [fontsLoaded] = useFonts({
     InriaBold: require("../assets/fonts/InriaSans-Bold.ttf"),
-    SpaceBold: require("../assets/fonts/SpaceGrotesk[wght].ttf"),
+    SpaceRegular: require("../assets/fonts/SpaceGrotesk[wght].ttf"),
   });
   const onLayoutRootView = useCallback(async () => {
+    navigation.setOptions({ title: details.name });
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
     }
@@ -25,7 +28,7 @@ const ProfileDetail = ({ route }) => {
     return null;
   }
   return (
-    <View style={tw`flex-1 bg-green-600 p-2 gap-2`}>
+    <View style={tw`flex-1 bg-green-600 p-2 gap-2`} onLayout={onLayoutRootView}>
       {/* <Text style={tw`text-white text-base`}>Profile Details Screen</Text> */}
       <View style={tw` h-1/3 justify-center items-center `}>
         <Image
@@ -39,11 +42,88 @@ const ProfileDetail = ({ route }) => {
       <Text
         style={tw.style(
           `text-white text-center text-3xl`,
-          customFontStyles.SpaceBold
+          customFontStyles.SpaceRegular
         )}
       >
         {details.name}
       </Text>
+
+      <ScrollView style={tw`flex-1`}>
+        <View style={tw`flex-1 gap-2`}>
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            Major: {details.major}
+          </Text>
+          {details.minor && (
+            <Text
+              style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+            >
+              Minor: {details.minor}
+            </Text>
+          )}
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            Year: {details.year}
+          </Text>
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            Role:{" "}
+            {`${details.dev ? "Developer" : ""} ${
+              details.des ? "Designer" : ""
+            } ${details.pm ? "Project Manager" : ""}`}
+          </Text>
+          <View style={tw`flex-row justify-between items-center`}>
+            <Text
+              style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+            >
+              Home: {details.home}
+            </Text>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("maplocation");
+              }}
+            >
+              <Entypo name="location-pin" size={24} color="white" />
+            </Pressable>
+          </View>
+
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            Birthday: {details.birthday}
+          </Text>
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            Favorite Quote: {details.quote}
+          </Text>
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            1st Favorite Thing: {details["favorite thing 1"]}
+          </Text>
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            2nd Favorite Thing: {details["favorite thing 2"]}
+          </Text>
+          <Text
+            style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+          >
+            3rd Favorite Thing: {details["favorite thing 3"]}
+          </Text>
+          {details["fun fact"] && (
+            <Text
+              style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+            >
+              Fun Fact: {details["fun fact"]}
+            </Text>
+          )}
+        </View>
+      </ScrollView>
     </View>
   );
 };

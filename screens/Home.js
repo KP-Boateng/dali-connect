@@ -19,9 +19,9 @@ const Home = () => {
     setSearchInput(text);
   };
   const [fontsLoaded] = useFonts({
-    MontserratBold: require("../assets/fonts/Montserrat-Bold.ttf"),
-    MontserratRegular: require("../assets/fonts/Montserrat-Regular.ttf"),
     InriaBold: require("../assets/fonts/InriaSans-Bold.ttf"),
+    SpaceRegular: require("../assets/fonts/SpaceGrotesk[wght].ttf"),
+    InriaRegular: require("../assets/fonts/InriaSans-Regular.ttf"),
   });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -66,7 +66,7 @@ const Home = () => {
           <Text
             style={tw.style(
               `text-white text-base`,
-              customFontStyles.MontserratBold
+              customFontStyles.SpaceRegular
             )}
           >
             There is no DALI member with this initial

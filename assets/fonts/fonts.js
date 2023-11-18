@@ -9,5 +9,6 @@ export const customFontStyles = StyleSheet.create({
   MontserratBold: { fontFamily: "MontserratBold", fontWeight: "normal" },
   InriaRegular: { fontFamily: "InriaRegular", fontWeight: "normal" },
   InriaBold: { fontFamily: "InriaBold", fontWeight: "normal" },
-  SpaceBold: { fontFamily: "SpaceBold", fontWeight: "normal" },
+  SpaceRegular: { fontFamily: "SpaceRegular", fontWeight: "normal" },
+  SpaceBold: { fontFamily: "SpaceBold", fontWeight: "800" },
 });

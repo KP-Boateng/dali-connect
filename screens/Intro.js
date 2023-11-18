@@ -11,8 +11,7 @@ import { useFonts } from "expo-font";
 SplashScreen.preventAutoHideAsync();
 const Intro = ({ navigation }) => {
   const [fontsLoaded] = useFonts({
-    MontserratBold: require("../assets/fonts/Montserrat-Bold.ttf"),
-    MontserratRegular: require("../assets/fonts/Montserrat-Regular.ttf"),
+    SpaceRegular: require("../assets/fonts/SpaceGrotesk[wght].ttf"),
   });
 
   useEffect(() => {
@@ -42,8 +41,8 @@ const Intro = ({ navigation }) => {
     >
       <Text
         style={tw.style(
-          `text-3xl text-white font-bold`,
-          customFontStyles.MontserratBold
+          `text-3xl text-white font-black`,
+          customFontStyles.SpaceRegular
         )}
       >
         DALI Connect
@@ -52,7 +51,7 @@ const Intro = ({ navigation }) => {
         style={tw`p-2 bg-white bg-opacity-50 rounded-lg absolute bottom-4 `}
       >
         <Text
-          style={tw.style(`text-xl`, customFontStyles.SpaceBold)}
+          style={tw.style(`text-xl`, customFontStyles.SpaceRegular)}
           onPress={() => {
             navigation.navigate("home");
           }}

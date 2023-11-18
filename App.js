@@ -6,6 +6,7 @@ import Intro from "./screens/Intro";
 import Home from "./screens/Home";
 import ProfileDetail from "./screens/ProfileDetail";
 import MapLocation from "./screens/MapLocation";
+import About from "./screens/About";
 
 const Stack = createNativeStackNavigator();
 
@@ -13,10 +14,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="intro"
         screenOptions={{
           // headerStyle: { backgroundColor: "green" },
           headerTitleAlign: "center",
-          headerTitleStyle: { fontWeight: "900" },
+          headerTitleStyle: { fontWeight: "900", color: "green" },
         }}
       >
         <Stack.Screen
@@ -29,12 +31,20 @@ export default function App() {
           component={Home}
           options={{
             title: "DALI Connect",
-            headerTitleStyle: { fontWeight: "900" },
             headerBackVisible: false,
           }}
         />
         <Stack.Screen name="profiledetail" component={ProfileDetail} />
-        <Stack.Screen name="maplocation" component={MapLocation} />
+        <Stack.Screen
+          name="maplocation"
+          component={MapLocation}
+          options={{ title: "Map Location" }}
+        />
+        <Stack.Screen
+          name="about"
+          component={About}
+          options={{ title: "About" }}
+        />
       </Stack.Navigator>
 
       {/* <View style={styles.container}>

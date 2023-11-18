@@ -37,7 +37,9 @@ const Home = () => {
   return (
     <View style={tw`flex-1 p-2 gap-2 `} onLayout={onLayoutRootView}>
       <View style={tw`w-2/3`}>
-        <Text style={tw.style(`text-xl`, customFontStyles.InriaBold)}>
+        <Text
+          style={tw.style(`text-xl text-green-600`, customFontStyles.InriaBold)}
+        >
           Get to know the amazing team of the DALI Lab
         </Text>
       </View>

@@ -23,24 +23,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "fonts": {
-      "MontserratRegular": {
-        "src": "./assets/fonts/Montserrat-Regular.ttf",
-        "format": "truetype"
-      },
-      "MontserratBold": {
-        "src": "./assets/fonts/Montserrat-Bold.ttf",
-        "format": "truetype"
-      },
-      "InriaRegular": {
-        "src": "./assets/fonts/InriaSans-Regular.ttf",
-        "format": "truetype"
-      },
-      "InriaBold": {
-        "src": "./assets/fonts/InriaSans-Bold.ttf",
-        "format": "truetype"
-      }
     }
   }
 }

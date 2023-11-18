@@ -32,6 +32,14 @@
       "MontserratBold": {
         "src": "./assets/fonts/Montserrat-Bold.ttf",
         "format": "truetype"
+      },
+      "InriaRegular": {
+        "src": "./assets/fonts/InriaSans-Regular.ttf",
+        "format": "truetype"
+      },
+      "InriaBold": {
+        "src": "./assets/fonts/InriaSans-Bold.ttf",
+        "format": "truetype"
       }
     }
   }

@@ -4,13 +4,20 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import { StyleSheet, Text, View } from "react-native";
 import Intro from "./screens/Intro";
 import Home from "./screens/Home";
+import ProfileDetail from "./screens/ProfileDetail";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          // headerStyle: { backgroundColor: "green" },
+          headerTitleAlign: "center",
+          // headerTitleStyle: { color: "#fff" },
+        }}
+      >
         <Stack.Screen
           name="intro"
           component={Intro}
@@ -25,6 +32,7 @@ export default function App() {
             headerBackVisible: false,
           }}
         />
+        <Stack.Screen name="profiledetail" component={ProfileDetail} />
       </Stack.Navigator>
 
       {/* <View style={styles.container}>

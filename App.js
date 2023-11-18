@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Intro from "./screens/Intro";
 import Home from "./screens/Home";
 import ProfileDetail from "./screens/ProfileDetail";
+import MapLocation from "./screens/MapLocation";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ export default function App() {
         screenOptions={{
           // headerStyle: { backgroundColor: "green" },
           headerTitleAlign: "center",
-          // headerTitleStyle: { color: "#fff" },
+          headerTitleStyle: { fontWeight: "900" },
         }}
       >
         <Stack.Screen
@@ -33,6 +34,7 @@ export default function App() {
           }}
         />
         <Stack.Screen name="profiledetail" component={ProfileDetail} />
+        <Stack.Screen name="maplocation" component={MapLocation} />
       </Stack.Navigator>
 
       {/* <View style={styles.container}>

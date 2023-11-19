@@ -36,6 +36,7 @@
     "react-native-snap-carousel": "^3.9.1",
     "react-native-view-shot": "3.7.0",
     "react-native-web": "~0.19.6",
+    "react-navigation-focus-render": "^0.0.1",
     "twrnc": "^3.6.4"
   },
   "devDependencies": {

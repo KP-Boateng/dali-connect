@@ -1,34 +1,57 @@
-import { View, Text, ScrollView, Pressable } from "react-native";
+import { View, Text, ScrollView, Pressable, FlatList } from "react-native";
 import tw from "twrnc";
 import { Image } from "expo-image";
-import { useCallback } from "react";
+import { useState, useEffect } from "react";
 import { customFontStyles } from "../assets/fonts/fonts";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { Entypo } from "@expo/vector-icons";
+import LoadingScreen from "./LoadingScreen";
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
 SplashScreen.preventAutoHideAsync();
 const ProfileDetail = ({ route, navigation }) => {
+  const [loading, setLoading] = useState(true);
   const { details } = route.params;
 
   const [fontsLoaded] = useFonts({
     InriaBold: require("../assets/fonts/InriaSans-Bold.ttf"),
     SpaceRegular: require("../assets/fonts/SpaceGrotesk[wght].ttf"),
   });
-  const onLayoutRootView = useCallback(async () => {
-    navigation.setOptions({ title: details.name });
+  // const onLayoutRootView = useCallback(async () => {
+  //   navigation.setOptions({ title: details.name });
+  //   if (fontsLoaded) {
+  //     await SplashScreen.hideAsync();
+  //   }
+  // }, [fontsLoaded]);
+
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
+
+  useEffect(() => {
+    const loadFonts = async () => {
+      try {
+        await SplashScreen.hideAsync();
+        navigation.setOptions({ title: details.name });
+        setLoading(false);
+      } catch (error) {
+        console.error("Error hiding splash screen:", error);
+      }
+    };
+
     if (fontsLoaded) {
-      await SplashScreen.hideAsync();
+      loadFonts();
     }
   }, [fontsLoaded]);
 
-  if (!fontsLoaded) {
-    return null;
+  if (!fontsLoaded || loading) {
+    return <LoadingScreen />; // Render the loading screen
   }
+
   return (
-    <View style={tw`flex-1 bg-green-600 p-2 gap-2`} onLayout={onLayoutRootView}>
+    <View style={tw`flex-1 bg-green-600 p-2 gap-2`}>
       {/* <Text style={tw`text-white text-base`}>Profile Details Screen</Text> */}
       <View style={tw` h-1/3 justify-center items-center `}>
         <Image

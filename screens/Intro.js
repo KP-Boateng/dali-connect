@@ -2,11 +2,11 @@ import { View, Text, Pressable } from "react-native";
 import tw from "twrnc";
 import { useEffect, useCallback } from "react";
 import { customFontStyles } from "../assets/fonts/fonts";
-
 import * as SplashScreen from "expo-splash-screen";
 //import { onLayoutRootView } from "../assets/fonts/fonts";
 // import { fontsLoaded } from "../assets/fonts/fonts";
 import { useFonts } from "expo-font";
+import { Image } from "expo-image";
 
 SplashScreen.preventAutoHideAsync();
 const Intro = ({ navigation }) => {
@@ -39,6 +39,12 @@ const Intro = ({ navigation }) => {
       style={tw.style(`flex-1  justify-center items-center bg-green-600`)}
       onLayout={onLayoutRootView}
     >
+      <Image
+        source={require("../assets/Logo_White.png")}
+        style={tw`w-[300px] h-[300px]`}
+        transition={1000}
+        contentFit="contain"
+      />
       <Text
         style={tw.style(
           `text-3xl text-white font-black`,
@@ -48,6 +54,7 @@ const Intro = ({ navigation }) => {
         DALI Connect
       </Text>
       <Pressable
+        android_ripple={{ color: "white" }}
         style={tw`p-2 bg-white bg-opacity-50 rounded-lg absolute bottom-4 `}
       >
         <Text

@@ -7,6 +7,7 @@ import Home from "./screens/Home";
 import ProfileDetail from "./screens/ProfileDetail";
 import MapLocation from "./screens/MapLocation";
 import About from "./screens/About";
+import Footer from "./components/Footer";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,7 @@ export default function App() {
         screenOptions={{
           // headerStyle: { backgroundColor: "green" },
           headerTitleAlign: "center",
-          headerTitleStyle: { fontWeight: "900", color: "green" },
+          headerTitleStyle: { fontWeight: "900", color: "#2e7d32" },
         }}
       >
         <Stack.Screen

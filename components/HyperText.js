@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, Linking } from "react-native";
 import tw from "twrnc";
+import { customFontStyles } from "../assets/fonts/fonts";
 
 const HyperlinkText = ({ url, text }) => {
   const handlePress = () => {
@@ -10,7 +11,14 @@ const HyperlinkText = ({ url, text }) => {
 
   return (
     <TouchableOpacity onPress={handlePress}>
-      <Text style={tw`text-white text-base underline`}>{text}</Text>
+      <Text
+        style={tw.style(
+          customFontStyles.InriaRegular,
+          `text-base text-white underline`
+        )}
+      >
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };

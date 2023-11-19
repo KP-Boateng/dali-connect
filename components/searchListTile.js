@@ -1,6 +1,6 @@
-import { Pressable, Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import tw from "twrnc";
-import { useCallback } from "react";
+import React, { useCallback } from "react";
 import { customFontStyles } from "../assets/fonts/fonts";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -29,7 +29,7 @@ const SearchListTile = ({ name, major }) => {
 
   // alert(details.name);
   return (
-    <Pressable
+    <TouchableOpacity
       style={tw`flex gap-2 my-1 p-2 rounded-lg bg-green-600`}
       onLayout={onLayoutRootView}
       onPress={() => navigation.navigate("profiledetail", { details })}
@@ -48,7 +48,7 @@ const SearchListTile = ({ name, major }) => {
           {major}
         </Text>
       </View>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
-export default SearchListTile;
+export default React.memo(SearchListTile);

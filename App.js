@@ -8,6 +8,7 @@ import ProfileDetail from "./screens/ProfileDetail";
 import MapLocation from "./screens/MapLocation";
 import About from "./screens/About";
 import Footer from "./components/Footer";
+import Categories from "./screens/Categories";
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,11 @@ export default function App() {
           name="about"
           component={About}
           options={{ title: "About" }}
+        />
+        <Stack.Screen
+          name="categories"
+          component={Categories}
+          options={{ title: "Categories" }}
         />
       </Stack.Navigator>
 

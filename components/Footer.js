@@ -47,7 +47,7 @@ const Footer = () => {
 
         <Pressable
           onPress={() => {
-            // navigation.navigate("intro");
+            navigation.navigate("categories");
           }}
           style={tw` flex-1 gap-2 justify-center items-center `}
         >

@@ -33,38 +33,41 @@ const Footer = () => {
         style={tw`w-full flex-row justify-between p-2 bg-green-600 bottom-0`}
         onLayout={onLayoutRootView}
       >
-        <View style={tw` flex-1 gap-2 justify-center items-center`}>
-          <Pressable
-            onPress={() => {
-              navigation.navigate("intro");
-            }}
-          >
-            <Ionicons name="home" size={24} color="white" />
-          </Pressable>
+        <Pressable
+          onPress={() => {
+            navigation.navigate("intro");
+          }}
+          style={tw` flex-1 gap-2 justify-center items-center `}
+        >
+          <Ionicons name="home" size={24} color="white" />
           <Text style={tw.style(`text-white`, customFontStyles.InriaBold)}>
             Home
           </Text>
-        </View>
-        <View style={tw`flex-1 gap-2 justify-center items-center`}>
-          <Pressable>
-            <MaterialIcons name="category" size={24} color="white" />
-          </Pressable>
+        </Pressable>
+
+        <Pressable
+          onPress={() => {
+            // navigation.navigate("intro");
+          }}
+          style={tw` flex-1 gap-2 justify-center items-center `}
+        >
+          <MaterialIcons name="category" size={24} color="white" />
           <Text style={tw.style(`text-white`, customFontStyles.InriaBold)}>
             Categories
           </Text>
-        </View>
-        <View style={tw`flex-1 gap-2 justify-center items-center`}>
-          <Pressable
-            onPress={() => {
-              navigation.navigate("about");
-            }}
-          >
-            <Feather name="settings" size={24} color="white" />
-          </Pressable>
+        </Pressable>
+
+        <Pressable
+          onPress={() => {
+            navigation.navigate("about");
+          }}
+          style={tw` flex-1 gap-2 justify-center items-center `}
+        >
+          <Feather name="settings" size={24} color="white" />
           <Text style={tw.style(`text-white`, customFontStyles.InriaBold)}>
             About
           </Text>
-        </View>
+        </Pressable>
       </View>
     </FocusRender>
   );

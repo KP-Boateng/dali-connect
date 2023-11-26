@@ -46,5 +46,5 @@ Displays the app logo for a few seconds before transitioning to the home screen.
 Clone the repository:
 
 ```bash
-git clone https://github.com/kp-boateng/dali-connect.git
+git clone https://github.com/KP-Boateng/dali-connect.git
 cd dali-connect

@@ -51,7 +51,7 @@ const About = () => {
         style={tw.style(customFontStyles.InriaRegular, `text-base text-white`)}
       >
         This app is built to connect you to the members of the DALI (Digital
-        Applied Learning and Innovation) Lab
+        Applied Learning and Innovation) Lab of Darmouth College
       </Text>
       <Text>
         {

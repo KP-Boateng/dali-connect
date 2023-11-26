@@ -9,6 +9,7 @@ import MapLocation from "./screens/MapLocation";
 import About from "./screens/About";
 import Footer from "./components/Footer";
 import Categories from "./screens/Categories";
+import CategoryResult from "./screens/CategoryResult";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +19,6 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="intro"
         screenOptions={{
-          // headerStyle: { backgroundColor: "green" },
           headerTitleAlign: "center",
           headerTitleStyle: { fontWeight: "900", color: "#2e7d32" },
         }}
@@ -36,7 +36,11 @@ export default function App() {
             headerBackVisible: false,
           }}
         />
-        <Stack.Screen name="profiledetail" component={ProfileDetail} />
+        <Stack.Screen
+          name="profiledetail"
+          component={ProfileDetail}
+          options={{ title: "Profile Detail" }}
+        />
         <Stack.Screen
           name="maplocation"
           component={MapLocation}
@@ -52,6 +56,11 @@ export default function App() {
           component={Categories}
           options={{ title: "Categories" }}
         />
+        <Stack.Screen
+          name="categoryresult"
+          component={CategoryResult}
+          options={{ title: "Category Result" }}
+        />
       </Stack.Navigator>
 
       {/* <View style={styles.container}>
@@ -61,12 +70,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });

@@ -55,15 +55,15 @@ const Intro = ({ navigation }) => {
       </Text>
       <Pressable
         android_ripple={{ color: "white" }}
-        style={tw`p-2 bg-white bg-opacity-50 rounded-lg absolute bottom-4 `}
+        style={tw`p-2 bg-white bg-opacity-30 rounded-lg absolute bottom-4 `}
       >
         <Text
-          style={tw.style(`text-xl`, customFontStyles.SpaceRegular)}
+          style={tw.style(`text-xl text-white`, customFontStyles.SpaceRegular)}
           onPress={() => {
             navigation.navigate("home");
           }}
         >
-          Let's Go
+          Let's Connect
         </Text>
       </Pressable>
     </View>

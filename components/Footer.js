@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <FocusRender>
       <View
-        style={tw`w-full flex-row justify-between p-2 bg-green-600 bottom-0`}
+        style={tw`w-full flex-row justify-between p-2 rounded-lg bg-green-600 bottom-0`}
         onLayout={onLayoutRootView}
       >
         <Pressable

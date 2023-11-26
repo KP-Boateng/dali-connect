@@ -1,4 +1,4 @@
-import { View, Text, TextInput, FlatList } from "react-native";
+import { View, Text, TextInput } from "react-native";
 import tw from "twrnc";
 import database from "../assets/json/dali_social_media.json";
 import React, { useEffect, useState, memo } from "react";

@@ -52,7 +52,6 @@ const ProfileDetail = ({ route, navigation }) => {
 
   return (
     <View style={tw`flex-1 bg-green-600 p-2 gap-2`}>
-      {/* <Text style={tw`text-white text-base`}>Profile Details Screen</Text> */}
       <View style={tw` h-1/3 justify-center items-center `}>
         <Image
           source={details.picture}
@@ -70,7 +69,16 @@ const ProfileDetail = ({ route, navigation }) => {
       >
         {details.name}
       </Text>
-
+      {details.mentor && (
+        <Text
+          style={tw.style(
+            `text-white text-center text-xl`,
+            customFontStyles.SpaceRegular
+          )}
+        >
+          Mentor
+        </Text>
+      )}
       <ScrollView style={tw`flex-1`}>
         <View style={tw`flex-1 gap-2`}>
           <Text
@@ -94,9 +102,11 @@ const ProfileDetail = ({ route, navigation }) => {
             style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
           >
             Role:{" "}
-            {`${details.dev ? "Developer" : ""} ${
-              details.des ? "Designer" : ""
-            } ${details.pm ? "Project Manager" : ""}`}
+            {`${details.core ? "(Core)" : ""}${
+              details.dev ? "Developer" : ""
+            } ${details.des ? "Designer" : ""}${
+              details.pm ? "Project Manager" : ""
+            }`}
           </Text>
           <View style={tw`flex-row justify-between items-center`}>
             <Text
@@ -112,7 +122,6 @@ const ProfileDetail = ({ route, navigation }) => {
               <Entypo name="location-pin" size={24} color="white" />
             </Pressable>
           </View>
-
           <Text
             style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
           >
@@ -138,6 +147,14 @@ const ProfileDetail = ({ route, navigation }) => {
           >
             3rd Favorite Thing: {details["favorite thing 3"]}
           </Text>
+          {details["favorite dartmouth tradition"] && (
+            <Text
+              style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
+            >
+              Favorite Darmouth Tradition:{" "}
+              {details["favorite dartmouth tradition"]}
+            </Text>
+          )}
           {details["fun fact"] && (
             <Text
               style={tw.style(`text-white text-xl`, customFontStyles.InriaBold)}
